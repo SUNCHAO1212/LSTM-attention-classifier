@@ -77,14 +77,15 @@ class MR(TarDataset):
         if examples is None:
             path = self.dirname if path is None else path
             examples = []
-            # 2018-03-29_13-21-44: 消极、中性
-            # 2018-03-29_15-43-15: negative/neutral
-            with open(os.path.join(path, 'negative'), errors='ignore') as f:
+            # 2018-04-10_14-15-32 需要
+            # 2018-04-10_15-34-07 需要_3
+            # 2018-04-10_17-00-36 需要_123
+            with open(os.path.join(path, '需要_123_cleaned'), errors='ignore') as f:
                 examples += [
-                    data.Example.fromlist([line, 'negative'], fields) for line in f]
-            with open(os.path.join(path, 'neutral'), errors='ignore') as f:
+                    data.Example.fromlist([line, '需要'], fields) for line in f]
+            with open(os.path.join(path, '不需要_123_cleaned'), errors='ignore') as f:
                 examples += [
-                    data.Example.fromlist([line, 'neutral'], fields) for line in f]
+                    data.Example.fromlist([line, '不需要'], fields) for line in f]
         super(MR, self).__init__(examples, fields, **kwargs)
 
     @classmethod

@@ -58,6 +58,7 @@ def train(train_iter, dev_iter, model, args):
                     if steps - last_step >= args.early_stop:
                         print('early stop by {} steps.'.format(args.early_stop))
                 save(model, args.save_dir, 'latest', '100')
+
             elif steps % args.save_interval == 0:
                 save(model, args.save_dir, 'snapshot', steps)
 

@@ -86,7 +86,7 @@ for attr, value in sorted(args.__dict__.items()):
     print("\t{}={}".format(attr.upper(), value))
 
 # # prediction example
-args.snapshot = "./snapshot/2018-03-29_15-43-15/latest_steps_100.pt"
+args.snapshot = "./snapshot/2018-04-10_17-00-36/latest_steps_100.pt"
 args.predict = "开启预测流程，取消注释后可调用测试，注释后可进行训练"
 
 # model
